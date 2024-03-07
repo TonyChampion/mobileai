@@ -1,0 +1,20 @@
+﻿<Page x:Class="CounselingAI.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:CounselingAI"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+  <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+    <TextBlock Text="{x:Bind ViewModel.CareerLabel}"/>
+    <TextBox Text="{x:Bind ViewModel.Career, Mode=TwoWay}"/>
+    <TextBlock Text="Location"/>
+    <TextBox Text="{x:Bind ViewModel.Location, Mode=TwoWay}"/>
+    <TextBlock Text="Response"/>
+    <ScrollViewer Width="300" Height="300">
+      <TextBlock Width="300"
+            Text="{x:Bind ViewModel.Response, Mode=OneWay}" TextWrapping="Wrap"/>
+    </ScrollViewer>
+    <Button Content="Ask Counselor" Command="{x:Bind ViewModel.AskCounselorCommand}"/>
+  </StackPanel>
+</Page>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ImageInspector.ViewModels"
+             x:Class="ImageInspector.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" 
+                       VerticalOptions="Fill">
+            <Frame BackgroundColor="#512BD4"
+           Padding="24"
+           CornerRadius="0">
+                <Label Text="Cat Identifier"
+             FontSize="32"
+             TextColor="White"
+             HorizontalOptions="Center" />
+            </Frame>
+
+            <Image Source="{Binding Photo, Mode=TwoWay}"
+           Aspect="AspectFill"
+           HeightRequest="350"
+           WidthRequest="350" />
+
+            <ActivityIndicator IsRunning="{Binding IsRunning}" />
+
+            <Label Text="{Binding OutputLabel}"
+           HorizontalTextAlignment="Center"
+           HorizontalOptions="Fill" />
+
+            <HorizontalStackLayout Spacing="50"
+                           Padding="10,0"
+                           HorizontalOptions="Center">
+                <Button Command="{Binding PickPhotoCommand}"
+              HorizontalOptions="Start"
+              Text="Pick a picture" />
+
+                <Button Command="{Binding TakePhotoCommand}"
+              HorizontalOptions="End"
+              Text="Take a picture" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

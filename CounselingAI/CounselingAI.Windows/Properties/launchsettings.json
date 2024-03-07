@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"CounselingAI.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"CounselingAI.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
